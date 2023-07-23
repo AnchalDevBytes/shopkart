@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div className='min-h-screen bg-slate-400'>
+    <div className='min-h-screen bg-gradient-to-r from-sky-500 to-blue-800'>
       <BrowserRouter>
       <Navbar/>
       <Routes>

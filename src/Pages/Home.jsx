@@ -1,8 +1,13 @@
 import React from 'react'
+import Hero from '../components/Hero'
+import Services from '../components/Services'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <main>
+    <Hero text={"Shopkart"}/>
+    <Services/>
+    </main>
   )
 }
 
