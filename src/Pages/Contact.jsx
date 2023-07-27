@@ -4,12 +4,11 @@ import Button from "../components/Button";
 const Contact = () => {
   return (
     <div className="flex flex-col gap-10 ">
-      <h2 className="text-4xl font-medium text-center mt-5 text-white underline underline-offset-8 hover:text-yellow-400">Feel free to share your reviews</h2>
       <div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117223.65983299309!2d85.2389251528664!3d23.343340860600705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc09d49d6899f43e!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1690280243901!5m2!1sen!2sin"
           width="100%"
-          height="320"
+          height="360"
           style={{border:0}}
           allowFullScreen=""
           loading="lazy"

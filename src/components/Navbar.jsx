@@ -25,7 +25,7 @@ const Navbar = () => {
         <li className="font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
           <NavLink to="/cart" role="button" className="relative flex">
             <FaOpencart size="32px" className="active:text-pink-400 hover:shadow hover:shadow-slate-100 hover:rounded-full text-slate-200" />
-            <span class="absolute right-0 top-0 rounded-full bg-red-500 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+            <span className="absolute right-0 top-0 rounded-full bg-red-500 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
               5
             </span>
           </NavLink>
