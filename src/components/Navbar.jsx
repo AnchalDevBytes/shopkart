@@ -5,7 +5,7 @@ import { FaOpencart } from "react-icons/fa";
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex justify-between items-center bg-slate-700 px-32 py-4 text-slate-200 cursor-pointer">
+    <nav className="flex sticky top-0 z-10 justify-between items-center bg-slate-700 px-32 py-4 text-slate-200 cursor-pointer">
       <div onClick={() => navigate("/")}>
         <img className="max-h-12" src="/images/logo-no-background.svg" alt="" />
       </div>
@@ -31,7 +31,7 @@ const Navbar = () => {
           </NavLink>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 
