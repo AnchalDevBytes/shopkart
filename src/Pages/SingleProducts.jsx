@@ -7,6 +7,7 @@ import FormatPrice from "../Helpers/FormatPrice";
 import { TbTruckDelivery, TbReplaceFilled } from "react-icons/tb";
 import { MdOutlineSecurity } from "react-icons/md";
 import Stars from "../components/Stars";
+import AddToCart from "../components/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -32,6 +33,7 @@ const SingleProducts = () => {
     stars,
     reviews,
     image,
+    colors
   } = singleProduct;
 
   return isSingleLoading ? (
@@ -66,7 +68,7 @@ const SingleProducts = () => {
           <p className="animate-pulse text-base font-semibold text-green-400">
             Deal of the Day : <FormatPrice Price={price} />
           </p>
-          <p>{description}</p>
+          <p className="text-sm font-medium">{description}</p>
           <div className="flex justify-between items-center border-b-2">
             <div className="flex flex-col items-center gap-3">
               <TbTruckDelivery className="text-5xl p-2  text-slate-800 bg-slate-400 rounded-full hover:shadow-lg hover:shadow-slate-200 active:rounded-full hover:text-pink-400" />
@@ -96,6 +98,8 @@ const SingleProducts = () => {
               Brand:  <span>{company}</span>
             </p>
           </div>
+          <hr className="-mt-6" />
+          {stock > 0 && <AddToCart product={singleProduct}/>}
         </div>
       </div>
     </>
