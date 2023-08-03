@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../StateManagement/ProductContext";
-import { NavLink } from "react-router-dom";
-import FormatPrice from "../Helpers/FormatPrice";
+import ProductCard from "./ProductCard";
 
 const FeaturedProducts = () => {
   const { isLoading, featureProducts } = useContext(AppContext);
@@ -25,34 +24,7 @@ const FeaturedProducts = () => {
       <h2 className="text-4xl font-semibold">Feature Services</h2>
       <div className=" grid grid-cols-3  gap-32 justify-center items-center">
         {featureProducts.map((item) => (
-          <NavLink 
-            to={`/singleproduct/${item.id}`}
-            key={item.id} 
-            className="bg-slate-800 min-h-[380px] w-[340px] flex items-center justify-center rounded-lg"
-          >
-            <div className="w-[300px] rounded-md">
-              <img
-                src={`${item?.image}`}
-                alt="Laptop"
-                className="h-[200px] w-full rounded-md object-cover"
-              />
-              <div className="p-4">
-                <h1 className="text-2xl font-semibold">{item?.name}</h1>
-                <div className="flex justify-between items-center">
-                  <p className="mt-3 text-lg text-blue-400">
-                    {" "}
-                    {<FormatPrice Price={item?.price} />}
-                  </p>
-                  <button
-                    to={`/singleproduct/${item.id}`}
-                    className="mt-4 rounded-lg bg-slate-700 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                  >
-                    Read
-                  </button>
-                </div>
-              </div>
-            </div>
-          </NavLink>
+          <ProductCard item={item}/>
         ))}
       </div>
     </div>

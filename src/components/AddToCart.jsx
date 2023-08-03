@@ -21,16 +21,16 @@ const AddToCart = ({product}) => {
   return (
     <div>
         <div>
-        <p>
+        <p className='flex items-center'>
             Colors: 
             {colors.map((curColor, index) => (
                 <button
                 key={index}
                 style={{backgroundColor:curColor}}
-                className="w-4 h-4 rounded-full ml-4 border-none outline-none opacity-50 cursor-pointer active:opacity-80 hover:opacity-80"
+                className={color === curColor ? "w-5 h-5 p-1 rounded-full ml-4 border-none outline-none opacity-100 cursor-pointer " : "w-5 h-5 p-1 rounded-full ml-4 border-none outline-none opacity-60 cursor-pointer "}
                 onClick={() => setColor(curColor)}
                 >
-                    {color === curColor ? <FaCheck className='text-sm font-bold' /> : null}
+                    {color === curColor ? <FaCheck className='text-xs font-bold' /> : null}
                 </button>
             ))}
         </p>
