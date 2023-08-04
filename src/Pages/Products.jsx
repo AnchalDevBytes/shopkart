@@ -7,11 +7,11 @@ import FilterSection from '../components/FilterSection'
 const Products = () => {
 
   return (
-    <div className='flex justify-around'>
-      <div className=''>
+    <div className='flex justify-between'>
+      <div className='w-[calc(100vw-70%)]'>
         <FilterSection/>
       </div>
-      <div className='max-w-[calc(100vw-40%)]'>
+      <div className='w-[calc(100vw-30%)] flex flex-col items-center gap-2'>
         <div>
           <Sort/>
         </div>

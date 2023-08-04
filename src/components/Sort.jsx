@@ -7,7 +7,7 @@ const Sort = () => {
     useContext(FilterContext);
 
   return (
-    <div className="flex justify-between items-center text-white px-5 mt-20">
+    <div className="flex justify-between gap-36 items-center text-white px-5 mt-20">
       <div className="flex gap-3">
         <button
           className={
