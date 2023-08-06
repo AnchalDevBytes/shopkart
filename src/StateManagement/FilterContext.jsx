@@ -14,6 +14,10 @@ const initialState = {
         text :"",
         category:"all",
         company:"all",
+        colors:"all",
+        MaxPrice:0,
+        MinPrice:0,
+        price:0,
     }
 }
 
@@ -46,6 +50,10 @@ export const FilterContextProvider = ({children}) => {
         return dispatch({type: "UPDATE_FILTERS_VALUE", payload:{name, value}});
     }
 
+    const ResetFilter = () => {
+        return dispatch({type:"RESET_FILTER"})
+    }
+
 
     //sorting product
 
@@ -60,7 +68,7 @@ export const FilterContextProvider = ({children}) => {
 
 
     return (
-        <FilterContext.Provider value={{...state, SetGridView, SetListView , Sorting, updateFilterValue}}>
+        <FilterContext.Provider value={{...state, SetGridView, SetListView , Sorting, updateFilterValue, ResetFilter}}>
             {children}
         </FilterContext.Provider>
     );
