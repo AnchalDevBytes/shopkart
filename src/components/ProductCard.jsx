@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import FormatPrice from '../Helpers/FormatPrice'
+import ProductButton from './ProductButton'
 
 const ProductCard = ({item}) => {
   return (
@@ -22,12 +23,7 @@ const ProductCard = ({item}) => {
                     {" "}
                     {<FormatPrice Price={item?.price} />}
                   </p>
-                  <button
-                    to={`/singleproduct/${item?.id}`}
-                    className="mt-4 rounded-lg bg-slate-700 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                  >
-                    Read
-                  </button>
+                  <ProductButton text={"View"} />
                 </div>
               </div>
             </div>

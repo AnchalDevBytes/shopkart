@@ -1,7 +1,7 @@
 import React from 'react'
 import FormatPrice from '../Helpers/FormatPrice';
 import { NavLink } from 'react-router-dom';
-import Button from './Button';
+import ProductButton from './ProductButton';
 
 const ListView = ({products}) => {
   return (
@@ -9,7 +9,9 @@ const ListView = ({products}) => {
       {
         products.map((item) => {
           return (
-            <div className='flex p-5 shadow shadow-black rounded-lg backdrop-filter backdrop-blur-xl bg-slate-900 bg-opacity-50'>
+            <NavLink
+            to={`/singleProduct/${item?.id}`}
+             className='flex p-5 shadow shadow-black rounded-lg backdrop-filter backdrop-blur-xl bg-slate-900 bg-opacity-50'>
               <div className='w-[300px] rounded-md'> 
                 <img src={item?.image} 
                 className="h-[220px] w-full rounded-md object-cover"/>
@@ -23,11 +25,11 @@ const ListView = ({products}) => {
                   </p>
                   <p>{item?.description.slice(0,90)}...</p>
                 </div>
-                <NavLink to={`/singleProduct/${item?.id}`}>
-                  <Button text={"Read More"}/>
-                </NavLink>
+                <div>
+                  <ProductButton text={"Read More"}/>
+                </div>
               </div>
-            </div>
+            </NavLink>
           )
         })
       }

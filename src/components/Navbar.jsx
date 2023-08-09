@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaOpencart } from "react-icons/fa";
+import { CartContext } from "../StateManagement/CartContext";
 
 const Navbar = () => {
+
+  const {total_item} = useContext(CartContext);
+
   const navigate = useNavigate();
   return (
     <nav className="flex sticky top-0 z-10 justify-between items-center bg-slate-700 px-32 py-4 text-slate-200 cursor-pointer">
@@ -26,7 +30,7 @@ const Navbar = () => {
           <NavLink to="/cart" role="button" className="relative flex">
             <FaOpencart size="32px" className="active:text-pink-400 hover:shadow hover:shadow-slate-100 hover:rounded-full text-slate-200" />
             <span className="absolute right-0 top-0 rounded-full bg-red-500 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
-              5
+              {total_item}
             </span>
           </NavLink>
         </li>

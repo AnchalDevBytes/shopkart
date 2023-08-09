@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {FaCheck} from "react-icons/fa"
 import CartAmountToggle from './CartAmountToggle';
-import { NavLink } from 'react-router-dom';
 import Button from "./Button"
+import { CartContext } from '../StateManagement/CartContext';
 
 const AddToCart = ({product}) => {
 
     const {id, colors, stock} = product;
     const [color, setColor] = useState(colors[0])
     const [amount, setAmount] = useState(1);
+
+   const {addToCart} = useContext(CartContext);
 
     const setIncrease = () => {
         amount < stock ? setAmount(amount + 1) : setAmount(stock);
@@ -41,9 +43,11 @@ const AddToCart = ({product}) => {
             setDecrease = {setDecrease}
             setIncrease = {setIncrease}
         />
-        <NavLink to="/cart">
+        <div
+        onClick={() => addToCart(id, amount, color, product)}
+        >
             <Button text = {"Add to Cart"}/>
-        </NavLink>
+        </div>
     </div>
   )
 }
