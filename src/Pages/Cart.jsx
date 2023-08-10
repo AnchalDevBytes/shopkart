@@ -6,8 +6,8 @@ import ProductButton from "../components/ProductButton";
 import FormatPrice from "../Helpers/FormatPrice";
 
 const Cart = () => {
-  const { cart, clearCart, total_price, shipping_fee,total_item } = useContext(CartContext);
-  console.log(cart);
+  const { cart, clearCart, total_price, shipping_fee} = useContext(CartContext);
+  // console.log(cart);
   const navigate = useNavigate();
 
   if (cart.length === 0) {

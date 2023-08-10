@@ -9,7 +9,7 @@ const initialState = {
     filter_products:[],
     all_products: [],
     grid_view: true,
-    sorting_value: "lowest",
+    sorting_value: "disabled",
     filters:{
         text :"",
         category:"all",

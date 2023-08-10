@@ -11,6 +11,7 @@ const ListView = ({products}) => {
           return (
             <NavLink
             to={`/singleProduct/${item?.id}`}
+            key={item?.id}
              className='flex p-5 shadow shadow-black rounded-lg backdrop-filter backdrop-blur-xl bg-slate-900 bg-opacity-50'>
               <div className='w-[300px] rounded-md'> 
                 <img src={item?.image} 

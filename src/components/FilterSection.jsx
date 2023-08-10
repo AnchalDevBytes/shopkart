@@ -2,12 +2,11 @@ import React, { useContext } from "react";
 import { FilterContext } from "../StateManagement/FilterContext";
 import { FaCheck } from "react-icons/fa";
 import FormatPrice from "../Helpers/FormatPrice";
-import ProductButton from "./ProductButton";
-import {MdCleaningServices} from "react-icons/md"
+import { MdCleaningServices } from "react-icons/md";
 
 const FilterSection = () => {
   const {
-    filters: { text, category, company, colors, MaxPrice, MinPrice, price },
+    filters: { text, colors, MaxPrice, MinPrice, price },
     updateFilterValue,
     all_products,
     ResetFilter,
@@ -44,7 +43,10 @@ const FilterSection = () => {
             className="py-3 text-center mx-10 border-none outline-none rounded-lg focus:opacity-50"
           />
         </form>
-        <div onClick={ResetFilter} className="mr-10 cursor-pointer  flex items-center gap-2 text-white py-2 px-5 rounded-lg bg-slate-800  text-sm font-semiboldshadow-sm hover:bg-slate-400 transition-all duration-300 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+        <div
+          onClick={ResetFilter}
+          className="mr-10 cursor-pointer  flex items-center gap-2 text-white py-2 px-5 rounded-lg bg-slate-800  text-sm font-semiboldshadow-sm hover:bg-slate-400 transition-all duration-300 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        >
           <p>Clear filter</p>
           <MdCleaningServices className="text-3xl text-red-300 hover:text-red-700" />
           {/* <ProductButton text={"Reset Filter"} /> */}
@@ -133,6 +135,7 @@ const FilterSection = () => {
           name="price"
           min={MinPrice}
           max={MaxPrice}
+          value={price}
           onChange={updateFilterValue}
         />
       </div>

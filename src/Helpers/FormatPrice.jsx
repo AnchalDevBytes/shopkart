@@ -1,4 +1,3 @@
-import React from "react";
 
 const FormatPrice = ({Price}) => {
   return Intl.NumberFormat("en-IN", {
